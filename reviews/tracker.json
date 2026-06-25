@@ -1,0 +1,507 @@
+{
+  "version": "2.0",
+  "created": "2026-06-25",
+  "project_root": "/home/ubuntu/a-stock-data",
+  "last_review_date": "2026-06-25",
+  "daily_metrics": {
+    "2026-06-23": {
+      "limit_up_count": 115,
+      "twenty_cm": 9,
+      "st_count": 23,
+      "sentiment": "🔥🔥 极度亢奋",
+      "top_3_themes": [
+        "半导体",
+        "消费",
+        "医药"
+      ],
+      "theme_count": 37,
+      "strong_theme_count": 10,
+      "weak_theme_count": 27,
+      "seal_distribution": {
+        "烂板/分歧": 17,
+        "换手板": 20,
+        "T字板/中等": 43,
+        "一字板/强封": 35
+      },
+      "main_index_changes": {
+        "上证指数": -1.37,
+        "深证成指": -3.17,
+        "创业板指": -3.84,
+        "科创50": -1.68,
+        "沪深300": -2.77
+      }
+    },
+    "2026-06-25": {
+      "limit_up_count": 90,
+      "twenty_cm": 8,
+      "st_count": 5,
+      "sentiment": "🔥🔥 极度亢奋",
+      "top_3_themes": [
+        "半导体",
+        "算力",
+        "新材料"
+      ],
+      "theme_count": 39,
+      "strong_theme_count": 4,
+      "weak_theme_count": 35,
+      "seal_distribution": {
+        "实体板 📈": 83,
+        "一字板 🔒": 6,
+        "T字板 ⚡": 1
+      },
+      "main_index_changes": {
+        "上证指数": 0.23,
+        "深证成指": 1.82,
+        "创业板指": 2.84,
+        "科创50": 3.87,
+        "沪深300": 1.56,
+        "国证2000": -0.12
+      }
+    }
+  },
+  "leader_tracking": {
+    "2026-06-23": [
+      {
+        "code": "688291",
+        "name": "金橙子",
+        "change_pct": 20.0,
+        "theme": "半导体",
+        "role": "龙头",
+        "seal_type": "换手板",
+        "turnover": 8.79,
+        "board": "科创板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "300665",
+        "name": "飞鹿股份",
+        "change_pct": 20.0,
+        "theme": "国企改革",
+        "role": "龙头",
+        "seal_type": "烂板/分歧",
+        "turnover": 29.66,
+        "board": "创业板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "300721",
+        "name": "怡达股份",
+        "change_pct": 19.993,
+        "theme": "化工",
+        "role": "龙头",
+        "seal_type": "烂板/分歧",
+        "turnover": 27.96,
+        "board": "创业板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "301211",
+        "name": "亨迪药业",
+        "change_pct": 19.979,
+        "theme": "医药",
+        "role": "龙头",
+        "seal_type": "T字板/中等",
+        "turnover": 3.2,
+        "board": "创业板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "300149",
+        "name": "睿智医药",
+        "change_pct": 19.948,
+        "theme": "AI",
+        "role": "龙头",
+        "seal_type": "T字板/中等",
+        "turnover": 7.94,
+        "board": "创业板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "603717",
+        "name": "天域生物",
+        "change_pct": 10.049,
+        "theme": "消费",
+        "role": "龙头",
+        "seal_type": "换手板",
+        "turnover": 9.62,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "002921",
+        "name": "联诚精密",
+        "change_pct": 10.021,
+        "theme": "机器人",
+        "role": "龙头",
+        "seal_type": "T字板/中等",
+        "turnover": 3.53,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "605118",
+        "name": "力鼎光电",
+        "change_pct": 10.006,
+        "theme": "AI",
+        "role": "先锋",
+        "seal_type": "一字板/强封",
+        "turnover": 0.54,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "002674",
+        "name": "兴业科技",
+        "change_pct": 10.005,
+        "theme": "新材料",
+        "role": "龙头",
+        "seal_type": "一字板/强封",
+        "turnover": 0.3,
+        "board": "深市主板",
+        "next_day_change": 9.99,
+        "next_day_seal": "一字板 🔒",
+        "next_day_status": "连板"
+      },
+      {
+        "code": "603757",
+        "name": "大元泵业",
+        "change_pct": 10.005,
+        "theme": "液冷",
+        "role": "龙头",
+        "seal_type": "T字板/中等",
+        "turnover": 4.03,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "000691",
+        "name": "亚太实业",
+        "change_pct": 9.991,
+        "theme": "化工",
+        "role": "先锋",
+        "seal_type": "T字板/中等",
+        "turnover": 6.86,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "605366",
+        "name": "宏柏新材",
+        "change_pct": 9.98,
+        "theme": "半导体",
+        "role": "先锋",
+        "seal_type": "T字板/中等",
+        "turnover": 3.02,
+        "board": "沪市主板",
+        "next_day_change": 10.02,
+        "next_day_seal": "一字板 🔒",
+        "next_day_status": "连板"
+      },
+      {
+        "code": "600777",
+        "name": "新潮能源",
+        "change_pct": 9.98,
+        "theme": "国企改革",
+        "role": "先锋",
+        "seal_type": "一字板/强封",
+        "turnover": 1.08,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "002031",
+        "name": "巨轮智能",
+        "change_pct": 9.946,
+        "theme": "机器人",
+        "role": "先锋",
+        "seal_type": "T字板/中等",
+        "turnover": 5.74,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "600965",
+        "name": "*ST福成",
+        "change_pct": 5.185,
+        "theme": "ST摘帽",
+        "role": "龙头",
+        "seal_type": "一字板/强封",
+        "turnover": 0.64,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "002822",
+        "name": "ST中装",
+        "change_pct": 5.042,
+        "theme": "ST摘帽",
+        "role": "先锋",
+        "seal_type": "一字板/强封",
+        "turnover": 0.18,
+        "board": "深市主板",
+        "next_day_change": 4.94,
+        "next_day_seal": "一字板 🔒",
+        "next_day_status": "溢价"
+      },
+      {
+        "code": "002592",
+        "name": "ST八菱",
+        "change_pct": 5.016,
+        "theme": "液冷",
+        "role": "先锋",
+        "seal_type": "一字板/强封",
+        "turnover": 0.63,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "605336",
+        "name": "*ST帅电",
+        "change_pct": 4.975,
+        "theme": "消费",
+        "role": "先锋",
+        "seal_type": "一字板/强封",
+        "turnover": 0.52,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "603718",
+        "name": "*ST海利",
+        "change_pct": 4.967,
+        "theme": "新材料",
+        "role": "先锋",
+        "seal_type": "一字板/强封",
+        "turnover": 2.32,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      },
+      {
+        "code": "002424",
+        "name": "ST百灵",
+        "change_pct": 4.922,
+        "theme": "医药",
+        "role": "先锋",
+        "seal_type": "一字板/强封",
+        "turnover": 0.6,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      }
+    ],
+    "2026-06-25": [
+      {
+        "code": "300650",
+        "name": "太龙股份",
+        "change_pct": 20.03,
+        "theme": "半导体",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 16.04,
+        "board": "创业板"
+      },
+      {
+        "code": "002303",
+        "name": "美盈森",
+        "change_pct": 10.1,
+        "theme": "消费",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 15.57,
+        "board": "深市主板"
+      },
+      {
+        "code": "600516",
+        "name": "方大炭素",
+        "change_pct": 10.08,
+        "theme": "新材料",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 6.6,
+        "board": "沪市主板"
+      },
+      {
+        "code": "000818",
+        "name": "航锦科技",
+        "change_pct": 10.03,
+        "theme": "算力",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 3.13,
+        "board": "深市主板"
+      },
+      {
+        "code": "600141",
+        "name": "兴发集团",
+        "change_pct": 10.01,
+        "theme": "新材料",
+        "role": "先锋",
+        "seal_type": "实体板 📈",
+        "turnover": 10.08,
+        "board": "沪市主板"
+      },
+      {
+        "code": "600857",
+        "name": "宁波中百",
+        "change_pct": 10.01,
+        "theme": "消费",
+        "role": "先锋",
+        "seal_type": "实体板 📈",
+        "turnover": 5.29,
+        "board": "沪市主板"
+      },
+      {
+        "code": "600667",
+        "name": "太极实业",
+        "change_pct": 10.0,
+        "theme": "半导体",
+        "role": "先锋",
+        "seal_type": "一字板 🔒",
+        "turnover": 0.73,
+        "board": "沪市主板"
+      },
+      {
+        "code": "002484",
+        "name": "江海股份",
+        "change_pct": 10.0,
+        "theme": "算力",
+        "role": "先锋",
+        "seal_type": "实体板 📈",
+        "turnover": 2.6,
+        "board": "深市主板"
+      }
+    ]
+  },
+  "theme_lifecycle": {
+    "半导体": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-25",
+      "peak_count": 38,
+      "peak_date": "2026-06-25",
+      "daily_counts": {
+        "2026-06-23": 16,
+        "2026-06-25": 38
+      },
+      "status": "加速中"
+    },
+    "消费": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-25",
+      "peak_count": 15,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 15,
+        "2026-06-25": 3
+      },
+      "status": "衰退中"
+    },
+    "医药": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "peak_count": 13,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 13
+      },
+      "status": "新生"
+    },
+    "AI": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "peak_count": 10,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 10
+      },
+      "status": "新生"
+    },
+    "国企改革": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "peak_count": 6,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 6
+      },
+      "status": "新生"
+    },
+    "机器人": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "peak_count": 6,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 6
+      },
+      "status": "新生"
+    },
+    "化工": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "peak_count": 6,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 6
+      },
+      "status": "新生"
+    },
+    "新材料": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-25",
+      "peak_count": 6,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 6,
+        "2026-06-25": 3
+      },
+      "status": "衰退中"
+    },
+    "液冷": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "peak_count": 4,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 4
+      },
+      "status": "新生"
+    },
+    "ST摘帽": {
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-06-23",
+      "peak_count": 3,
+      "peak_date": "2026-06-23",
+      "daily_counts": {
+        "2026-06-23": 3
+      },
+      "status": "新生"
+    },
+    "算力": {
+      "first_seen": "2026-06-25",
+      "last_seen": "2026-06-25",
+      "peak_count": 6,
+      "peak_date": "2026-06-25",
+      "daily_counts": {
+        "2026-06-25": 6
+      },
+      "status": "新生"
+    }
+  },
+  "zhaban_tracking": {}
+}

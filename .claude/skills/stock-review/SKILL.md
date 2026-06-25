@@ -1375,6 +1375,453 @@ def _update_review_index(date_str: str, stocks: list[dict], themes: dict,
 
 ---
 
+## 📈 跨日追踪系统（Phase 1 — 市场敏感度核心）
+
+**复盘不是每天写一份独立报告就结束了。** 市场敏感度的本质不是"知道今天发生了什么"，而是"看到变化的方向、速度和信号"。跨日追踪系统通过自动对比今日与昨日的数据，生成两个新板块：昨日验证 + 题材持续性。
+
+### 追踪数据文件：`reviews/tracker.json`
+
+每次复盘自动维护，结构如下：
+
+```json
+{
+  "version": "2.0",
+  "last_review_date": "2026-06-25",
+  "daily_metrics": {
+    "2026-06-25": {
+      "limit_up_count": 90, "sentiment": "极度亢奋",
+      "top_3_themes": ["半导体", "算力", "新材料"],
+      "seal_distribution": {"实体板": 83, "一字板": 6},
+      "main_index_changes": {"科创50": 3.87}
+    }
+  },
+  "leader_tracking": {
+    "2026-06-25": [
+      {"code": "300650", "name": "太龙股份", "theme": "半导体", "role": "龙头",
+       "change_pct": 20.03, "seal_type": "实体板", "next_day_change": null}
+    ]
+  },
+  "theme_lifecycle": {
+    "半导体": {"first_seen": "2026-06-23", "peak_count": 38, "peak_date": "2026-06-25",
+               "daily_counts": {"2026-06-23": 26, "2026-06-25": 38}, "status": "加速中"}
+  },
+  "zhaban_tracking": {
+    "2026-06-25": [{"code": "xxx", "name": "xxx", "change_pct": 8.5, "reason_raw": "..."}]
+  }
+}
+```
+
+### 跨日追踪函数
+
+```python
+import os, json
+from collections import Counter
+
+def load_tracker(project_root: str = None) -> dict:
+    """加载跨日追踪数据"""
+    if project_root is None:
+        project_root = os.environ.get("A_STOCK_PROJECT_ROOT", os.getcwd())
+    tracker_path = os.path.join(project_root, "reviews", "tracker.json")
+    if os.path.exists(tracker_path):
+        with open(tracker_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"version": "2.0", "daily_metrics": {}, "leader_tracking": {},
+            "theme_lifecycle": {}, "zhaban_tracking": {}}
+
+
+def update_cross_day_tracker(date_str: str, stocks: list[dict], themes: dict,
+                              index_data: dict, zhaban_stocks: list[dict],
+                              project_root: str = None) -> dict:
+    """
+    更新跨日追踪数据。
+    必须在每次复盘报告生成后调用。
+    """
+    tracker = load_tracker(project_root)
+    
+    # ── 1. 更新 daily_metrics ──
+    n = len(stocks)
+    if n >= 80: sentiment = "🔥🔥 极度亢奋"
+    elif n >= 50: sentiment = "🔥 强势"
+    elif n >= 30: sentiment = "✅ 温和"
+    elif n >= 10: sentiment = "❄️ 偏冷"
+    else: sentiment = "🧊 冰点"
+    
+    seal_dist = Counter(s.get("seal_type", "-") for s in stocks)
+    
+    top_themes = sorted(themes.items(), key=lambda x: -x[1]["count"])
+    top_3 = [t for t, _ in top_themes[:3]]
+    
+    idx_changes = {}
+    for name, info in index_data.items():
+        idx_changes[name] = round(info.get("change_pct", 0), 2)
+    
+    tracker["daily_metrics"][date_str] = {
+        "limit_up_count": n,
+        "twenty_cm": sum(1 for s in stocks if s.get("change_pct", 0) >= 19.9),
+        "st_count": sum(1 for s in stocks if "ST" in s.get("name", "")),
+        "sentiment": sentiment,
+        "top_3_themes": top_3,
+        "theme_count": len(themes),
+        "strong_theme_count": sum(1 for _, info in themes.items() if info["count"] >= 3),
+        "weak_theme_count": sum(1 for _, info in themes.items() if info["count"] < 3),
+        "seal_distribution": dict(seal_dist),
+        "main_index_changes": idx_changes,
+        "zhaban_count": len(zhaban_stocks),
+    }
+    
+    # ── 2. 更新 leader_tracking ──
+    day_leaders = []
+    for theme_name, theme_info in themes.items():
+        if theme_info["count"] < 3:
+            continue
+        group_stocks = theme_info["stocks"]
+        codes_in_theme = {s["code"] for s in group_stocks}
+        actual_stocks = [s for s in stocks if s["code"] in codes_in_theme]
+        if len(actual_stocks) < 3:
+            continue
+        
+        leader = max(actual_stocks, key=lambda s: s["change_pct"])
+        remaining = [s for s in actual_stocks if s["code"] != leader["code"]]
+        pioneer = min(remaining, key=lambda s: s.get("turnover", 999)) if remaining else None
+        
+        day_leaders.append({
+            "code": leader["code"], "name": leader["name"],
+            "change_pct": round(leader["change_pct"], 2),
+            "theme": theme_name, "role": "龙头",
+            "seal_type": leader.get("seal_type", "-"),
+            "turnover": round(leader.get("turnover", 0), 1),
+            "board": leader.get("board", "-"),
+        })
+        if pioneer:
+            day_leaders.append({
+                "code": pioneer["code"], "name": pioneer["name"],
+                "change_pct": round(pioneer["change_pct"], 2),
+                "theme": theme_name, "role": "先锋",
+                "seal_type": pioneer.get("seal_type", "-"),
+                "turnover": round(pioneer.get("turnover", 0), 1),
+                "board": pioneer.get("board", "-"),
+            })
+    
+    day_leaders.sort(key=lambda x: -x["change_pct"])
+    tracker["leader_tracking"][date_str] = day_leaders
+    
+    # ── 3. 回溯更新前一天的 next_day_change ──
+    prev_date = tracker.get("last_review_date")
+    if prev_date and prev_date in tracker["leader_tracking"]:
+        today_stocks_map = {s["code"]: s for s in stocks}
+        for prev_leader in tracker["leader_tracking"][prev_date]:
+            if prev_leader["code"] in today_stocks_map:
+                ns = today_stocks_map[prev_leader["code"]]
+                prev_leader["next_day_change"] = round(ns["change_pct"], 2)
+                prev_leader["next_day_seal"] = ns.get("seal_type", "-")
+                if ns["change_pct"] >= 9.9:
+                    prev_leader["next_day_status"] = "连板 🔥"
+                elif ns["change_pct"] > 0:
+                    prev_leader["next_day_status"] = "溢价 ✅"
+                elif ns["change_pct"] > -5:
+                    prev_leader["next_day_status"] = "亏损 ❌"
+                else:
+                    prev_leader["next_day_status"] = "大跌 💀"
+            else:
+                prev_leader["next_day_change"] = None
+                prev_leader["next_day_status"] = "未涨停"
+    
+    # ── 4. 更新 theme_lifecycle ──
+    for theme_name, theme_info in themes.items():
+        if theme_info["count"] < 3:
+            continue
+        if theme_name not in tracker["theme_lifecycle"]:
+            tracker["theme_lifecycle"][theme_name] = {
+                "first_seen": date_str, "last_seen": date_str,
+                "peak_count": theme_info["count"], "peak_date": date_str,
+                "daily_counts": {}, "status": "新生",
+            }
+        t = tracker["theme_lifecycle"][theme_name]
+        t["last_seen"] = date_str
+        if theme_info["count"] > t["peak_count"]:
+            t["peak_count"] = theme_info["count"]
+            t["peak_date"] = date_str
+        t["daily_counts"][date_str] = theme_info["count"]
+        
+        counts = list(t["daily_counts"].values())
+        if len(counts) >= 2:
+            if counts[-1] > counts[-2] * 1.2:
+                t["status"] = "加速中 🔥"
+            elif counts[-1] < counts[-2] * 0.7:
+                t["status"] = "衰退中 ❄️"
+            else:
+                t["status"] = "延续 ➡️"
+    
+    # ── 5. 更新炸板追踪 ──
+    if zhaban_stocks:
+        tracker["zhaban_tracking"][date_str] = [{
+            "code": s["code"], "name": s["name"],
+            "change_pct": round(s["change_pct"], 2),
+            "seal_type": s.get("seal_type", "-"),
+            "reason_raw": s.get("reason_raw", ""),
+            "turnover": round(s.get("turnover", 0), 1),
+        } for s in zhaban_stocks]
+    
+    tracker["last_review_date"] = date_str
+    
+    # ── 6. 保存 ──
+    if project_root is None:
+        project_root = os.environ.get("A_STOCK_PROJECT_ROOT", os.getcwd())
+    tracker_path = os.path.join(project_root, "reviews", "tracker.json")
+    with open(tracker_path, "w", encoding="utf-8") as f:
+        json.dump(tracker, f, ensure_ascii=False, indent=2)
+    print(f"✅ 跨日追踪已更新: {tracker_path}")
+    
+    return tracker
+
+
+def build_yesterday_verification_section(tracker: dict, date_str: str) -> str:
+    """
+    生成《昨日验证》板块的 Markdown 文本。
+    从 tracker 中读前一天龙头数据（已含 next_day_change），生成验证表格。
+    """
+    lines = []
+    lines.append("## 昨日验证")
+    lines.append("")
+    
+    prev_date = None
+    for d in sorted(tracker.get("leader_tracking", {}).keys()):
+        if d < date_str:
+            prev_date = d
+    
+    if not prev_date or prev_date not in tracker["leader_tracking"]:
+        lines.append("> ⚠️ 无昨日追踪数据，首次复盘将从今日开始积累。")
+        return "\n".join(lines)
+    
+    prev_leaders = tracker["leader_tracking"][prev_date]
+    if not prev_leaders:
+        return "\n".join(lines)
+    
+    # Stats
+    verified = [l for l in prev_leaders if l.get("next_day_change") is not None]
+    if verified:
+        avg_next = sum(l["next_day_change"] for l in verified) / len(verified)
+        lianban = sum(1 for l in verified if l.get("next_day_status") == "连板 🔥")
+        yijia = sum(1 for l in verified if l.get("next_day_status") == "溢价 ✅")
+        huisui = sum(1 for l in verified if l.get("next_day_status") in ("亏损 ❌", "大跌 💀"))
+        
+        lines.append(f"> 昨日共追踪 **{len(prev_leaders)}** 只龙头/先锋 | "
+                     f"连板: **{lianban}** 只 | 溢价: **{yijia}** 只 | "
+                     f"回撤: **{huisui}** 只 | 平均次日涨幅: **{avg_next:+.2f}%**")
+    else:
+        lines.append(f"> 昨日共追踪 **{len(prev_leaders)}** 只龙头/先锋（次日数据待更新）")
+    
+    lines.append("")
+    lines.append("| 日期 | 角色 | 代码 | 名称 | 题材 | 当日涨幅 | 次日涨幅 | 结果 |")
+    lines.append("|------|------|------|------|------|----------|----------|------|")
+    
+    for l in sorted(prev_leaders, key=lambda x: -(x.get("next_day_change") or -999)):
+        nd = l.get("next_day_change")
+        nd_str = f"{nd:+.2f}%" if nd is not None else "?"
+        lines.append(
+            f"| {prev_date} | {l.get('role', '')} | {l['code']} | {l['name']} | "
+            f"{l.get('theme', '-')} | +{l['change_pct']}% | {nd_str} | "
+            f"{l.get('next_day_status', '?')} |"
+        )
+    lines.append("")
+    
+    return "\n".join(lines)
+
+
+def build_theme_continuity_section(tracker: dict, date_str: str) -> str:
+    """
+    生成《题材持续性》板块的 Markdown 文本。
+    对比今天 vs 昨天的主题分布，标注延续/加速/衰退/切换。
+    """
+    lines = []
+    lines.append("## 题材持续性")
+    lines.append("")
+    
+    today_metrics = tracker.get("daily_metrics", {}).get(date_str)
+    if not today_metrics:
+        lines.append("> ⚠️ 无今日数据")
+        return "\n".join(lines)
+    
+    today_themes = today_metrics.get("top_3_themes", [])
+    
+    prev_date = None
+    for d in sorted(tracker.get("daily_metrics", {}).keys()):
+        if d < date_str:
+            prev_date = d
+    
+    if not prev_date:
+        lines.append("> 📌 首次复盘，将从下次开始追踪题材持续性。")
+        return "\n".join(lines)
+    
+    prev_metrics = tracker.get("daily_metrics", {}).get(prev_date)
+    prev_themes = prev_metrics.get("top_3_themes", []) if prev_metrics else []
+    
+    # Theme lifecycle
+    lines.append("### 题材生命周期")
+    lines.append("")
+    lines.append("| 题材 | 状态 | 首次出现 | 峰值涨停数 | 峰值日期 | 涨停数趋势 |")
+    lines.append("|------|------|----------|------------|----------|------------|")
+    
+    for theme_name, t in tracker.get("theme_lifecycle", {}).items():
+        # Only show themes seen in last 5 days
+        if t["last_seen"] < date_str and (date_str > t["last_seen"]):
+            # Skip inactive themes older than 3 days
+            from datetime import date as _dt, timedelta
+            last = _dt.fromisoformat(t["last_seen"])
+            today = _dt.fromisoformat(date_str)
+            if (today - last).days > 3:
+                continue
+        
+        counts_str = " → ".join(
+            f"{d}({c}只)" for d, c in sorted(t["daily_counts"].items())
+        )
+        lines.append(
+            f"| {theme_name} | {t['status']} | {t['first_seen']} | "
+            f"{t['peak_count']} | {t['peak_date']} | {counts_str} |"
+        )
+    lines.append("")
+    
+    # Cross-day sentiment comparison
+    lines.append("### 情绪对比")
+    lines.append("")
+    lines.append("| 指标 | {} (昨日) | {} (今日) | 变化 |".format(prev_date, date_str))
+    lines.append("|------|------------|------------|------|")
+    
+    metrics_to_compare = [
+        ("limit_up_count", "涨停数", ""),
+        ("strong_theme_count", "强势题材数", "个"),
+        ("zhaban_count", "炸板数", "只"),
+    ]
+    
+    for key, label, unit in metrics_to_compare:
+        prev_val = prev_metrics.get(key, 0) if prev_metrics else 0
+        today_val = today_metrics.get(key, 0)
+        delta = today_val - prev_val
+        if delta > 0: arrow = "↑"
+        elif delta < 0: arrow = "↓"
+        else: arrow = "→"
+        lines.append(f"| {label} | {prev_val}{unit} | {today_val}{unit} | {arrow} {delta:+d}{unit} |")
+    
+    # Seal distribution comparison
+    prev_seal = Counter(prev_metrics.get("seal_distribution", {})) if prev_metrics else Counter()
+    today_seal = Counter(today_metrics.get("seal_distribution", {}))
+    for seal_type in today_seal:
+        prev = prev_seal.get(seal_type, 0)
+        today = today_seal.get(seal_type, 0)
+        delta = today - prev
+        arrow = "↑" if delta > 0 else ("↓" if delta < 0 else "→")
+        lines.append(f"| {seal_type} | {prev}只 | {today}只 | {arrow} {delta:+d}只 |")
+    
+    lines.append("")
+    
+    return "\n".join(lines)
+
+
+def build_zhaban_section(zhaban_stocks: list[dict], tracker: dict, date_str: str) -> str:
+    """
+    生成《炸板观察》板块的 Markdown 文本。
+    分析今日炸板股及其题材分布。
+    """
+    lines = []
+    lines.append("## 炸板观察")
+    lines.append("")
+    
+    if not zhaban_stocks:
+        prev_zhaban = 0
+        for d in tracker.get("daily_metrics", {}):
+            if d < date_str:
+                prev_zhaban = tracker["daily_metrics"][d].get("zhaban_count", 0)
+        
+        lines.append(f"> ✅ 今日无炸板股（触及涨停但未封死）。")
+        if prev_zhaban > 0:
+            lines.append(f"> 对比昨日 {prev_zhaban} 只炸板 → 今日封板成功率提升。")
+        lines.append("")
+        return "\n".join(lines)
+    
+    # Stats
+    lines.append(f"> ⚠️ 今日 **{len(zhaban_stocks)}** 只触及涨停但未封死（炸板/烂板）")
+    lines.append("")
+    
+    # Themes of zhaban stocks
+    zhaban_tags = []
+    for s in zhaban_stocks:
+        tags = s.get("reason_raw", "").split("+")[:2]
+        zhaban_tags.extend(tags)
+    tag_dist = Counter(zhaban_tags)
+    
+    lines.append("### 炸板题材分布")
+    lines.append("")
+    lines.append("> " + " | ".join(f"{t}({c}次)" for t, c in tag_dist.most_common(8)))
+    lines.append("")
+    
+    lines.append("### 炸板个股")
+    lines.append("")
+    lines.append("| # | 代码 | 名称 | 涨幅% | 换手% | 上涨原因 |")
+    lines.append("|---|------|------|-------|-------|----------|")
+    for i, s in enumerate(sorted(zhaban_stocks, key=lambda x: -x["change_pct"]), 1):
+        reason_short = s.get("reason_raw", "-")[:50]
+        lines.append(
+            f"| {i} | {s['code']} | {s['name']} | "
+            f"+{s['change_pct']:.2f}% | {s.get('turnover', 0):.1f}% | {reason_short} |"
+        )
+    lines.append("")
+    
+    # Warning signals
+    lines.append("### ⚠️ 信号解读")
+    lines.append("")
+    
+    prev_zhaban = 0
+    for d in sorted(tracker.get("daily_metrics", {}).keys()):
+        if d < date_str:
+            prev_zhaban = tracker["daily_metrics"][d].get("zhaban_count", 0)
+    
+    if len(zhaban_stocks) > prev_zhaban * 1.5:
+        lines.append(f"- 🔴 炸板数较昨日大幅增加（{prev_zhaban}→{len(zhaban_stocks)}），追高风险上升")
+    elif len(zhaban_stocks) < prev_zhaban * 0.5:
+        lines.append(f"- 🟢 炸板数较昨日大幅减少（{prev_zhaban}→{len(zhaban_stocks)}），封板成功率提升")
+    else:
+        lines.append(f"- 🟡 炸板数与昨日持平（{prev_zhaban}→{len(zhaban_stocks)}）")
+    
+    # High turnover warning
+    high_turnover = [s for s in zhaban_stocks if s.get("turnover", 0) > 15]
+    if high_turnover:
+        codes = ", ".join(f"{s['code']} {s['name']}" for s in high_turnover[:5])
+        lines.append(f"- ⚠️ 高换手炸板股（>15%）：{codes} — 筹码松动信号")
+    
+    lines.append("")
+    
+    return "\n".join(lines)
+```
+
+### Claude 执行清单更新（新增跨日追踪步骤）
+
+在原有 6 条之外，新增：
+
+7. **捕获炸板股**：同花顺热点返回的全部强势股中，找出触及涨停但未封死的（`high >= limit_price` 但 `close < limit_price`），标记 `seal_type = "炸板 💥"`，传入 `zhaban_stocks` 列表。
+
+8. **更新 tracker.json**：调用 `update_cross_day_tracker()`，自动回填前一天龙头今日表现。
+
+9. **追加报告板块**：报告生成后，在"复盘总结"之前插入：
+   - `build_yesterday_verification_section()` → 昨日验证
+   - `build_theme_continuity_section()` → 题材持续性  
+   - `build_zhaban_section()` → 炸板观察
+
+10. **周度复盘（每周五）**：如果 `date_str.weekday() == 4`（周五），在报告末尾追加"本周复盘总结"，从 tracker 中提取 5 日数据生成周度题材演进和最佳龙头排名。
+
+> **📐 报告最终结构**（顺序）：
+> ```
+> 一、市场总览
+> 二、涨停个股全表
+> 三、题材分析
+> 四、龙虎榜动向
+> 昨日验证 ← 新增
+> 题材持续性 ← 新增
+> 炸板观察 ← 新增
+> 五、复盘总结
+> ```
+
+---
+
 ## 综合示例：完整三步复盘
 
 ```python
