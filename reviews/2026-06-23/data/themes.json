@@ -1,0 +1,1218 @@
+{
+  "半导体": {
+    "strength": "🔥🔥🔥 超级主线",
+    "count": 16,
+    "avg_change": 11.24,
+    "max_change": 20.0,
+    "stocks": [
+      {
+        "code": "688291",
+        "name": "金橙子",
+        "change_pct": 20.0,
+        "turnover": 8.79,
+        "seal_type": "换手板",
+        "reason_raw": "激光通信+激光控制系统+收购萨米特+一季报增长"
+      },
+      {
+        "code": "300835",
+        "name": "龙磁科技",
+        "change_pct": 19.999,
+        "turnover": 14.43,
+        "seal_type": "换手板",
+        "reason_raw": "芯片电感+服务器电源+稀土永磁+业绩增长"
+      },
+      {
+        "code": "001279",
+        "name": "强邦新材",
+        "change_pct": 10.015,
+        "turnover": 6.69,
+        "seal_type": "T字板/中等",
+        "reason_raw": "电子陶瓷+印刷版材+铝期货套保"
+      },
+      {
+        "code": "603015",
+        "name": "弘讯科技",
+        "change_pct": 10.0,
+        "turnover": 4.76,
+        "seal_type": "T字板/中等",
+        "reason_raw": "MCU芯片+核聚变+工业自动化"
+      },
+      {
+        "code": "603335",
+        "name": "迪生力",
+        "change_pct": 10.0,
+        "turnover": 17.38,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "收购半导体+汽车轮毂+股份转让"
+      },
+      {
+        "code": "601869",
+        "name": "长飞光纤",
+        "change_pct": 10.0,
+        "turnover": 5.67,
+        "seal_type": "T字板/中等",
+        "reason_raw": "空芯光纤+AI算力光纤+业绩高增"
+      },
+      {
+        "code": "600171",
+        "name": "上海贝岭",
+        "change_pct": 10.0,
+        "turnover": 5.72,
+        "seal_type": "T字板/中等",
+        "reason_raw": "模拟芯片+功率芯片+光通信+汽车电子"
+      },
+      {
+        "code": "600707",
+        "name": "彩虹股份",
+        "change_pct": 10.0,
+        "turnover": 10.26,
+        "seal_type": "换手板",
+        "reason_raw": "玻璃基板封装+基板玻璃+显示面板+咸阳国资"
+      },
+      {
+        "code": "002141",
+        "name": "贤丰控股",
+        "change_pct": 10.0,
+        "turnover": 20.38,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "覆铜板+PCB上游+扭亏为盈"
+      },
+      {
+        "code": "000070",
+        "name": "特发信息",
+        "change_pct": 10.0,
+        "turnover": 16.05,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "MPO光连接器+CPO+光纤光缆+深圳国资"
+      },
+      {
+        "code": "002962",
+        "name": "五方光电",
+        "change_pct": 9.994,
+        "turnover": 18.25,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "玻璃晶圆+光学光电子+AR/VR光学元件"
+      },
+      {
+        "code": "600360",
+        "name": "华微电子",
+        "change_pct": 9.992,
+        "turnover": 14.88,
+        "seal_type": "换手板",
+        "reason_raw": "功率半导体+摘帽+吉林国资"
+      },
+      {
+        "code": "605366",
+        "name": "宏柏新材",
+        "change_pct": 9.98,
+        "turnover": 3.02,
+        "seal_type": "T字板/中等",
+        "reason_raw": "光纤概念+含硫硅烷+电子级硅基材料"
+      },
+      {
+        "code": "002522",
+        "name": "浙江众成",
+        "change_pct": 9.971,
+        "turnover": 9.31,
+        "seal_type": "换手板",
+        "reason_raw": "光纤油膏+POF热收缩膜+国企"
+      },
+      {
+        "code": "002453",
+        "name": "华软科技",
+        "change_pct": 9.959,
+        "turnover": 3.59,
+        "seal_type": "T字板/中等",
+        "reason_raw": "光刻胶基材+精细化工+收购莱恩光电"
+      },
+      {
+        "code": "002047",
+        "name": "宝鹰股份",
+        "change_pct": 9.908,
+        "turnover": 3.18,
+        "seal_type": "T字板/中等",
+        "reason_raw": "光耦合器+股权转让获批+摘帽"
+      }
+    ]
+  },
+  "消费": {
+    "strength": "🔥🔥🔥 超级主线",
+    "count": 15,
+    "avg_change": 9.01,
+    "max_change": 10.05,
+    "stocks": [
+      {
+        "code": "603717",
+        "name": "天域生物",
+        "change_pct": 10.049,
+        "turnover": 9.62,
+        "seal_type": "换手板",
+        "reason_raw": "生猪养殖+功能性红曲+光伏"
+      },
+      {
+        "code": "603630",
+        "name": "拉芳家化",
+        "change_pct": 10.039,
+        "turnover": 3.31,
+        "seal_type": "T字板/中等",
+        "reason_raw": "洗护+医美概念+跳水队合作+一季度增长"
+      },
+      {
+        "code": "002631",
+        "name": "德尔未来",
+        "change_pct": 10.037,
+        "turnover": 8.61,
+        "seal_type": "换手板",
+        "reason_raw": "家居产品+石墨烯+亏损收窄"
+      },
+      {
+        "code": "600708",
+        "name": "光明地产",
+        "change_pct": 10.033,
+        "turnover": 2.08,
+        "seal_type": "一字板/强封",
+        "reason_raw": "物业管理+无ST风险+上海国资"
+      },
+      {
+        "code": "002830",
+        "name": "名雕股份",
+        "change_pct": 10.031,
+        "turnover": 17.2,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "家装龙头+成立AI公司+高送转"
+      },
+      {
+        "code": "603863",
+        "name": "松炀资源",
+        "change_pct": 10.03,
+        "turnover": 3.65,
+        "seal_type": "T字板/中等",
+        "reason_raw": "造纸+业绩减亏+粤港澳大湾区"
+      },
+      {
+        "code": "001206",
+        "name": "依依股份",
+        "change_pct": 10.03,
+        "turnover": 6.25,
+        "seal_type": "T字板/中等",
+        "reason_raw": "宠物卫生用品+产品提价+出口"
+      },
+      {
+        "code": "002687",
+        "name": "乔治白",
+        "change_pct": 10.024,
+        "turnover": 6.45,
+        "seal_type": "T字板/中等",
+        "reason_raw": "职业装+校服+通勤服拓展"
+      },
+      {
+        "code": "605377",
+        "name": "华旺科技",
+        "change_pct": 10.0,
+        "turnover": 2.86,
+        "seal_type": "一字板/强封",
+        "reason_raw": "装饰原纸+高分红+盈利修复"
+      },
+      {
+        "code": "600843",
+        "name": "上工申贝",
+        "change_pct": 10.0,
+        "turnover": 5.86,
+        "seal_type": "T字板/中等",
+        "reason_raw": "纺织产业合作+碳纤维运动飞机+缝制机器人"
+      },
+      {
+        "code": "002014",
+        "name": "永新股份",
+        "change_pct": 9.981,
+        "turnover": 2.6,
+        "seal_type": "一字板/强封",
+        "reason_raw": "包装材料+新产能投放+高股息+一季报增长"
+      },
+      {
+        "code": "600743",
+        "name": "华远控股",
+        "change_pct": 9.955,
+        "turnover": 3.67,
+        "seal_type": "T字板/中等",
+        "reason_raw": "酒店管理+物业管理+实控人筹划重组"
+      },
+      {
+        "code": "000632",
+        "name": "ST三木",
+        "change_pct": 5.047,
+        "turnover": 2.75,
+        "seal_type": "一字板/强封",
+        "reason_raw": "跨境电商+福州国资+盘活资产"
+      },
+      {
+        "code": "600365",
+        "name": "ST通葡",
+        "change_pct": 4.979,
+        "turnover": 0.93,
+        "seal_type": "一字板/强封",
+        "reason_raw": "葡萄酒+回购注销+电商业务"
+      },
+      {
+        "code": "605336",
+        "name": "*ST帅电",
+        "change_pct": 4.975,
+        "turnover": 0.52,
+        "seal_type": "一字板/强封",
+        "reason_raw": "集成灶+退市博弈+ST板块"
+      }
+    ]
+  },
+  "医药": {
+    "strength": "🔥🔥🔥 超级主线",
+    "count": 13,
+    "avg_change": 9.98,
+    "max_change": 19.98,
+    "stocks": [
+      {
+        "code": "301211",
+        "name": "亨迪药业",
+        "change_pct": 19.979,
+        "turnover": 3.2,
+        "seal_type": "T字板/中等",
+        "reason_raw": "布洛芬+原料药+制剂"
+      },
+      {
+        "code": "603669",
+        "name": "灵康药业",
+        "change_pct": 10.099,
+        "turnover": 5.19,
+        "seal_type": "T字板/中等",
+        "reason_raw": "创新药+阿尔茨海默+一季报扭亏"
+      },
+      {
+        "code": "605369",
+        "name": "拱东医疗",
+        "change_pct": 10.0,
+        "turnover": 1.38,
+        "seal_type": "一字板/强封",
+        "reason_raw": "医疗耗材+外销+一季报增长"
+      },
+      {
+        "code": "000813",
+        "name": "德展健康",
+        "change_pct": 10.0,
+        "turnover": 2.88,
+        "seal_type": "一字板/强封",
+        "reason_raw": "创新药+重组胶原蛋白+降血脂药"
+      },
+      {
+        "code": "000756",
+        "name": "新华制药",
+        "change_pct": 9.984,
+        "turnover": 2.13,
+        "seal_type": "一字板/强封",
+        "reason_raw": "创新药获批+解热镇痛原料药+阿尔茨海默症+国企改革"
+      },
+      {
+        "code": "002728",
+        "name": "特一药业",
+        "change_pct": 9.975,
+        "turnover": 3.0,
+        "seal_type": "T字板/中等",
+        "reason_raw": "止咳宝片+二线品种高增+中药+分红"
+      },
+      {
+        "code": "000566",
+        "name": "海南海药",
+        "change_pct": 9.973,
+        "turnover": 2.18,
+        "seal_type": "一字板/强封",
+        "reason_raw": "创新药+海南自贸区+国企改革"
+      },
+      {
+        "code": "002370",
+        "name": "亚太药业",
+        "change_pct": 9.959,
+        "turnover": 2.78,
+        "seal_type": "一字板/强封",
+        "reason_raw": "光动力疗法+创新药+仿制药"
+      },
+      {
+        "code": "600488",
+        "name": "津药药业",
+        "change_pct": 9.956,
+        "turnover": 13.49,
+        "seal_type": "换手板",
+        "reason_raw": "CPHI展会+创新药+甾体激素"
+      },
+      {
+        "code": "600881",
+        "name": "亚泰集团",
+        "change_pct": 9.934,
+        "turnover": 2.93,
+        "seal_type": "一字板/强封",
+        "reason_raw": "创新药+东北证券出售+长春国资"
+      },
+      {
+        "code": "002038",
+        "name": "双鹭药业",
+        "change_pct": 9.921,
+        "turnover": 3.21,
+        "seal_type": "T字板/中等",
+        "reason_raw": "创新药+硝酸甘油喷雾剂+化学制药"
+      },
+      {
+        "code": "600080",
+        "name": "ST金花",
+        "change_pct": 5.066,
+        "turnover": 1.65,
+        "seal_type": "一字板/强封",
+        "reason_raw": "骨科中药+创新药+一季报增长"
+      },
+      {
+        "code": "002424",
+        "name": "ST百灵",
+        "change_pct": 4.922,
+        "turnover": 0.6,
+        "seal_type": "一字板/强封",
+        "reason_raw": "集采中标+苗药龙头+创新药"
+      }
+    ]
+  },
+  "AI": {
+    "strength": "🔥🔥🔥 超级主线",
+    "count": 10,
+    "avg_change": 10.99,
+    "max_change": 19.95,
+    "stocks": [
+      {
+        "code": "300149",
+        "name": "睿智医药",
+        "change_pct": 19.948,
+        "turnover": 7.94,
+        "seal_type": "T字板/中等",
+        "reason_raw": "AI制药+创新药+CRO"
+      },
+      {
+        "code": "603106",
+        "name": "恒银科技",
+        "change_pct": 10.068,
+        "turnover": 2.84,
+        "seal_type": "一字板/强封",
+        "reason_raw": "AI金融+全球化+债权回收+智能终端"
+      },
+      {
+        "code": "603007",
+        "name": "顺景科技",
+        "change_pct": 10.032,
+        "turnover": 13.02,
+        "seal_type": "换手板",
+        "reason_raw": "具身智能+定增募资10.77亿+传感器+IMU"
+      },
+      {
+        "code": "603116",
+        "name": "红蜻蜓",
+        "change_pct": 10.016,
+        "turnover": 3.4,
+        "seal_type": "T字板/中等",
+        "reason_raw": "AI设计+时尚鞋履+IP经济"
+      },
+      {
+        "code": "605069",
+        "name": "正和生态",
+        "change_pct": 10.016,
+        "turnover": 3.13,
+        "seal_type": "T字板/中等",
+        "reason_raw": "智谱AI+水务机器狗+生态水利"
+      },
+      {
+        "code": "605118",
+        "name": "力鼎光电",
+        "change_pct": 10.006,
+        "turnover": 0.54,
+        "seal_type": "一字板/强封",
+        "reason_raw": "AI机器视觉+低空经济+物流机器人"
+      },
+      {
+        "code": "603122",
+        "name": "合富中国",
+        "change_pct": 9.991,
+        "turnover": 3.63,
+        "seal_type": "T字板/中等",
+        "reason_raw": "AI医疗+猴痘概念+海峡两岸"
+      },
+      {
+        "code": "603466",
+        "name": "风语筑",
+        "change_pct": 9.979,
+        "turnover": 7.71,
+        "seal_type": "T字板/中等",
+        "reason_raw": "具身智能+AI+体验经济+坏账追回"
+      },
+      {
+        "code": "603318",
+        "name": "水发燃气",
+        "change_pct": 9.972,
+        "turnover": 25.81,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "AI数据中心燃气轮机+氦气+国企"
+      },
+      {
+        "code": "600405",
+        "name": "动力源",
+        "change_pct": 9.901,
+        "turnover": 4.03,
+        "seal_type": "T字板/中等",
+        "reason_raw": "AI智算中心电源+液冷超充+电源系统"
+      }
+    ]
+  },
+  "国企改革": {
+    "strength": "🔥🔥 强势题材",
+    "count": 6,
+    "avg_change": 8.33,
+    "max_change": 20.0,
+    "stocks": [
+      {
+        "code": "300665",
+        "name": "飞鹿股份",
+        "change_pct": 20.0,
+        "turnover": 29.66,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "控制权变更+新能源材料+防腐涂料+军工"
+      },
+      {
+        "code": "600777",
+        "name": "新潮能源",
+        "change_pct": 9.98,
+        "turnover": 1.08,
+        "seal_type": "一字板/强封",
+        "reason_raw": "摘帽复牌+页岩油+债务化解"
+      },
+      {
+        "code": "600238",
+        "name": "*ST椰岛",
+        "change_pct": 5.085,
+        "turnover": 1.42,
+        "seal_type": "一字板/强封",
+        "reason_raw": "摘帽预期+保健酒+一季报增长+海南国资"
+      },
+      {
+        "code": "002289",
+        "name": "*ST宇顺",
+        "change_pct": 4.991,
+        "turnover": 1.1,
+        "seal_type": "一字板/强封",
+        "reason_raw": "摘帽申请+IDC并表+算力租赁+液冷布局"
+      },
+      {
+        "code": "603789",
+        "name": "ST星农",
+        "change_pct": 4.971,
+        "turnover": 2.16,
+        "seal_type": "一字板/强封",
+        "reason_raw": "摘帽+烘干机+农业机械"
+      },
+      {
+        "code": "600119",
+        "name": "*ST长投",
+        "change_pct": 4.944,
+        "turnover": 1.28,
+        "seal_type": "一字板/强封",
+        "reason_raw": "上海国资+现代物流+ST摘帽预期"
+      }
+    ]
+  },
+  "机器人": {
+    "strength": "🔥🔥 强势题材",
+    "count": 6,
+    "avg_change": 9.98,
+    "max_change": 10.02,
+    "stocks": [
+      {
+        "code": "002921",
+        "name": "联诚精密",
+        "change_pct": 10.021,
+        "turnover": 3.53,
+        "seal_type": "T字板/中等",
+        "reason_raw": "机器人+精密机械+汽车零部件"
+      },
+      {
+        "code": "002196",
+        "name": "方正电机",
+        "change_pct": 10.016,
+        "turnover": 9.43,
+        "seal_type": "换手板",
+        "reason_raw": "人形机器人+新能源驱动电机+国企改革"
+      },
+      {
+        "code": "001225",
+        "name": "和泰机电",
+        "change_pct": 9.995,
+        "turnover": 7.12,
+        "seal_type": "T字板/中等",
+        "reason_raw": "澄清机器人概念+物料输送设备+出海"
+      },
+      {
+        "code": "603725",
+        "name": "天安新材",
+        "change_pct": 9.973,
+        "turnover": 8.54,
+        "seal_type": "换手板",
+        "reason_raw": "机器人+电子皮肤+高分子新材料+承诺不减持"
+      },
+      {
+        "code": "002420",
+        "name": "毅昌科技",
+        "change_pct": 9.946,
+        "turnover": 5.94,
+        "seal_type": "T字板/中等",
+        "reason_raw": "人形机器人+滁州国资入主+汽车结构件"
+      },
+      {
+        "code": "002031",
+        "name": "巨轮智能",
+        "change_pct": 9.946,
+        "turnover": 5.74,
+        "seal_type": "T字板/中等",
+        "reason_raw": "人形机器人+XT减速器+轮胎模具"
+      }
+    ]
+  },
+  "化工": {
+    "strength": "🔥🔥 强势题材",
+    "count": 6,
+    "avg_change": 11.66,
+    "max_change": 19.99,
+    "stocks": [
+      {
+        "code": "300721",
+        "name": "怡达股份",
+        "change_pct": 19.993,
+        "turnover": 27.96,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "湿电子化学品+HPPO技术+环氧丙烷+拟建新项目"
+      },
+      {
+        "code": "002549",
+        "name": "凯美特气",
+        "change_pct": 10.018,
+        "turnover": 8.21,
+        "seal_type": "换手板",
+        "reason_raw": "电子特气+氦气+宜章项目试产+五氟化锑"
+      },
+      {
+        "code": "600379",
+        "name": "宝光股份",
+        "change_pct": 10.016,
+        "turnover": 8.48,
+        "seal_type": "换手板",
+        "reason_raw": "电子特气+氢能+真空灭弧室+央企"
+      },
+      {
+        "code": "000691",
+        "name": "亚太实业",
+        "change_pct": 9.991,
+        "turnover": 6.86,
+        "seal_type": "T字板/中等",
+        "reason_raw": "医药中间体+精细化工+股东增持+摘帽"
+      },
+      {
+        "code": "002584",
+        "name": "西陇科学",
+        "change_pct": 9.989,
+        "turnover": 15.07,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "PCB用化学试剂+磷化工+氢氟酸"
+      },
+      {
+        "code": "600470",
+        "name": "六国化工",
+        "change_pct": 9.983,
+        "turnover": 19.0,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "磷化工+产品涨价+精制磷酸"
+      }
+    ]
+  },
+  "新材料": {
+    "strength": "🔥🔥 强势题材",
+    "count": 6,
+    "avg_change": 9.16,
+    "max_change": 10.01,
+    "stocks": [
+      {
+        "code": "002674",
+        "name": "兴业科技",
+        "change_pct": 10.005,
+        "turnover": 0.3,
+        "seal_type": "一字板/强封",
+        "reason_raw": "磷化铟收购+机器人电子皮肤+汽车内饰皮革"
+      },
+      {
+        "code": "603938",
+        "name": "三孚股份",
+        "change_pct": 10.0,
+        "turnover": 10.04,
+        "seal_type": "换手板",
+        "reason_raw": "高纯四氯化硅涨价+光纤材料+存储芯片"
+      },
+      {
+        "code": "603407",
+        "name": "长裕集团",
+        "change_pct": 9.995,
+        "turnover": 30.16,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "氧氯化锆+陶瓷载板+光通讯+业绩增长"
+      },
+      {
+        "code": "600397",
+        "name": "江钨装备",
+        "change_pct": 9.991,
+        "turnover": 17.98,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "钨钽铌资产注入+磁选装备+江西国资"
+      },
+      {
+        "code": "002167",
+        "name": "东方锆业",
+        "change_pct": 9.978,
+        "turnover": 12.93,
+        "seal_type": "换手板",
+        "reason_raw": "锆材料+产品涨价+固态电池+定增扩产"
+      },
+      {
+        "code": "603718",
+        "name": "*ST海利",
+        "change_pct": 4.967,
+        "turnover": 2.32,
+        "seal_type": "一字板/强封",
+        "reason_raw": "氧化锆+收购并表+口腔修复+ST板块"
+      }
+    ]
+  },
+  "液冷": {
+    "strength": "🔥 活跃题材",
+    "count": 4,
+    "avg_change": 8.75,
+    "max_change": 10.01,
+    "stocks": [
+      {
+        "code": "603757",
+        "name": "大元泵业",
+        "change_pct": 10.005,
+        "turnover": 4.03,
+        "seal_type": "T字板/中等",
+        "reason_raw": "液冷泵+算力温控+泵业龙头"
+      },
+      {
+        "code": "002871",
+        "name": "伟隆股份",
+        "change_pct": 9.995,
+        "turnover": 9.2,
+        "seal_type": "换手板",
+        "reason_raw": "液冷阀门+高出口占比+分红实施"
+      },
+      {
+        "code": "600506",
+        "name": "统一股份",
+        "change_pct": 9.987,
+        "turnover": 4.74,
+        "seal_type": "T字板/中等",
+        "reason_raw": "液冷服务器+控制权拟变更+央企"
+      },
+      {
+        "code": "002592",
+        "name": "ST八菱",
+        "change_pct": 5.016,
+        "turnover": 0.63,
+        "seal_type": "一字板/强封",
+        "reason_raw": "液冷技术储备+新能源汽车热管理+汽车零部件"
+      }
+    ]
+  },
+  "ST摘帽": {
+    "strength": "🔥 活跃题材",
+    "count": 3,
+    "avg_change": 5.07,
+    "max_change": 5.18,
+    "stocks": [
+      {
+        "code": "600965",
+        "name": "*ST福成",
+        "change_pct": 5.185,
+        "turnover": 0.64,
+        "seal_type": "一字板/强封",
+        "reason_raw": "ST整改+预制菜+肉牛养殖"
+      },
+      {
+        "code": "002822",
+        "name": "ST中装",
+        "change_pct": 5.042,
+        "turnover": 0.18,
+        "seal_type": "一字板/强封",
+        "reason_raw": "申请撤销ST+物业管理+重整完成"
+      },
+      {
+        "code": "002198",
+        "name": "ST嘉应",
+        "change_pct": 4.969,
+        "turnover": 2.42,
+        "seal_type": "一字板/强封",
+        "reason_raw": "ST整改+创新药+中成药"
+      }
+    ]
+  },
+  "地产基建": {
+    "strength": "💤 零散题材",
+    "count": 2,
+    "avg_change": 14.99,
+    "max_change": 19.98,
+    "stocks": [
+      {
+        "code": "300961",
+        "name": "深水海纳",
+        "change_pct": 19.982,
+        "turnover": 13.79,
+        "seal_type": "换手板",
+        "reason_raw": "工业污水处理+智慧水务+控制权变更"
+      },
+      {
+        "code": "000042",
+        "name": "中洲控股",
+        "change_pct": 10.0,
+        "turnover": 1.34,
+        "seal_type": "一字板/强封",
+        "reason_raw": "地产开发+物业服务+粤港澳大湾区"
+      }
+    ]
+  },
+  "培育钻石": {
+    "strength": "💤 零散题材",
+    "count": 2,
+    "avg_change": 9.99,
+    "max_change": 9.99,
+    "stocks": [
+      {
+        "code": "600172",
+        "name": "黄河旋风",
+        "change_pct": 9.994,
+        "turnover": 25.56,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "培育钻石+金刚石散热+资产划转"
+      },
+      {
+        "code": "605580",
+        "name": "恒盛能源",
+        "change_pct": 9.989,
+        "turnover": 9.79,
+        "seal_type": "换手板",
+        "reason_raw": "培育钻石+CVD金刚石+热电联产+业绩增长"
+      }
+    ]
+  },
+  "算力": {
+    "strength": "💤 零散题材",
+    "count": 2,
+    "avg_change": 14.96,
+    "max_change": 19.91,
+    "stocks": [
+      {
+        "code": "300167",
+        "name": "ST迪威迅",
+        "change_pct": 19.909,
+        "turnover": 5.9,
+        "seal_type": "T字板/中等",
+        "reason_raw": "算力租赁+软件外包+ST板块"
+      },
+      {
+        "code": "002580",
+        "name": "圣阳股份",
+        "change_pct": 10.01,
+        "turnover": 13.54,
+        "seal_type": "换手板",
+        "reason_raw": "算力+液冷储能+电池+山东国资"
+      }
+    ]
+  },
+  "面值退市博弈": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.16,
+    "max_change": 5.16,
+    "stocks": [
+      {
+        "code": "002717",
+        "name": "*ST岭南",
+        "change_pct": 5.155,
+        "turnover": 6.48,
+        "seal_type": "T字板/中等",
+        "reason_raw": "面值退市博弈+ST板块+中山国资"
+      }
+    ]
+  },
+  "短剧": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.13,
+    "max_change": 5.13,
+    "stocks": [
+      {
+        "code": "600892",
+        "name": "*ST大晟",
+        "change_pct": 5.128,
+        "turnover": 1.78,
+        "seal_type": "一字板/强封",
+        "reason_raw": "短剧+申请撤销退市风险警示+唐山国资"
+      }
+    ]
+  },
+  "天然气": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 4.96,
+    "max_change": 4.96,
+    "stocks": [
+      {
+        "code": "600243",
+        "name": "*ST海华",
+        "change_pct": 4.959,
+        "turnover": 2.75,
+        "seal_type": "一字板/强封",
+        "reason_raw": "天然气+摘帽预期+一季报营收增长"
+      }
+    ]
+  },
+  "与五粮液续签协议": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.02,
+    "max_change": 10.02,
+    "stocks": [
+      {
+        "code": "600793",
+        "name": "宜宾纸业",
+        "change_pct": 10.016,
+        "turnover": 5.49,
+        "seal_type": "T字板/中等",
+        "reason_raw": "与五粮液续签协议+生物基新材料+醋酸纤维素+竹浆造纸"
+      }
+    ]
+  },
+  "热电联产": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.01,
+    "max_change": 10.01,
+    "stocks": [
+      {
+        "code": "600719",
+        "name": "大连热电",
+        "change_pct": 10.011,
+        "turnover": 17.1,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "热电联产+一季报增长+大连国资"
+      }
+    ]
+  },
+  "高送转": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "002976",
+        "name": "瑞玛精密",
+        "change_pct": 10.0,
+        "turnover": 18.65,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "高送转+光通信散热+空气悬架+汽车零部件"
+      }
+    ]
+  },
+  "控制权或变更": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.05,
+    "max_change": 5.05,
+    "stocks": [
+      {
+        "code": "600818",
+        "name": "ST中路",
+        "change_pct": 5.054,
+        "turnover": 3.12,
+        "seal_type": "T字板/中等",
+        "reason_raw": "控制权或变更+永久自行车+高空风能"
+      }
+    ]
+  },
+  "聚焦煤炭主业": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.95,
+    "max_change": 9.95,
+    "stocks": [
+      {
+        "code": "000571",
+        "name": "新大洲A",
+        "change_pct": 9.949,
+        "turnover": 10.63,
+        "seal_type": "换手板",
+        "reason_raw": "聚焦煤炭主业+拟退出牛肉产业+C919供应商+海南自贸区"
+      }
+    ]
+  },
+  "债务化解": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.14,
+    "max_change": 5.14,
+    "stocks": [
+      {
+        "code": "000056",
+        "name": "*ST皇庭",
+        "change_pct": 5.143,
+        "turnover": 3.36,
+        "seal_type": "T字板/中等",
+        "reason_raw": "债务化解+功率半导体+亏损收窄"
+      }
+    ]
+  },
+  "稀贵金属": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.13,
+    "max_change": 10.13,
+    "stocks": [
+      {
+        "code": "002672",
+        "name": "东江环保",
+        "change_pct": 10.133,
+        "turnover": 5.3,
+        "seal_type": "T字板/中等",
+        "reason_raw": "稀贵金属+危废资源化+氟化工+广东国资"
+      }
+    ]
+  },
+  "防伪瓶盖": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "002374",
+        "name": "中锐股份",
+        "change_pct": 10.0,
+        "turnover": 7.57,
+        "seal_type": "T字板/中等",
+        "reason_raw": "防伪瓶盖+资产剥离+化债预期"
+      }
+    ]
+  },
+  "新能源": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "603210",
+        "name": "泰鸿万立",
+        "change_pct": 10.0,
+        "turnover": 2.32,
+        "seal_type": "一字板/强封",
+        "reason_raw": "新能源汽车零部件+小米汽车+一季报增长"
+      }
+    ]
+  },
+  "可转债强赎": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.03,
+    "max_change": 10.03,
+    "stocks": [
+      {
+        "code": "605167",
+        "name": "利柏特",
+        "change_pct": 10.033,
+        "turnover": 3.29,
+        "seal_type": "T字板/中等",
+        "reason_raw": "可转债强赎+核电模块+工业模块"
+      }
+    ]
+  },
+  "焦炉烘炉": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.04,
+    "max_change": 10.04,
+    "stocks": [
+      {
+        "code": "601011",
+        "name": "宝泰隆",
+        "change_pct": 10.037,
+        "turnover": 3.2,
+        "seal_type": "T字板/中等",
+        "reason_raw": "焦炉烘炉+石墨烯+氢能"
+      }
+    ]
+  },
+  "参股长江证券": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.96,
+    "max_change": 9.96,
+    "stocks": [
+      {
+        "code": "600851",
+        "name": "海欣股份",
+        "change_pct": 9.955,
+        "turnover": 6.19,
+        "seal_type": "T字板/中等",
+        "reason_raw": "参股长江证券+创新药+医药制造"
+      }
+    ]
+  },
+  "超级电容": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "002068",
+        "name": "黑猫股份",
+        "change_pct": 10.0,
+        "turnover": 15.82,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "超级电容+超导电炭黑+炭黑龙头+国企改革"
+      }
+    ]
+  },
+  "军工": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.99,
+    "max_change": 9.99,
+    "stocks": [
+      {
+        "code": "000551",
+        "name": "创元科技",
+        "change_pct": 9.994,
+        "turnover": 3.62,
+        "seal_type": "T字板/中等",
+        "reason_raw": "商业航天+洁净环保+国网中标+一季报增长"
+      }
+    ]
+  },
+  "问询函澄清": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.13,
+    "max_change": 10.13,
+    "stocks": [
+      {
+        "code": "600400",
+        "name": "红豆股份",
+        "change_pct": 10.135,
+        "turnover": 4.57,
+        "seal_type": "T字板/中等",
+        "reason_raw": "问询函澄清+养老机器人+男装"
+      }
+    ]
+  },
+  "中标1.97亿项目": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.18,
+    "max_change": 5.18,
+    "stocks": [
+      {
+        "code": "600187",
+        "name": "*ST国中",
+        "change_pct": 5.185,
+        "turnover": 2.01,
+        "seal_type": "一字板/强封",
+        "reason_raw": "中标1.97亿项目+股份回购+扭亏为盈+PPP概念"
+      }
+    ]
+  },
+  "开盘啦实控人任董事长": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 20.0,
+    "max_change": 20.0,
+    "stocks": [
+      {
+        "code": "300085",
+        "name": "银之杰",
+        "change_pct": 20.0,
+        "turnover": 18.67,
+        "seal_type": "烂板/分歧",
+        "reason_raw": "开盘啦实控人任董事长+金融科技"
+      }
+    ]
+  },
+  "日用玻璃": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 4.98,
+    "max_change": 4.98,
+    "stocks": [
+      {
+        "code": "603021",
+        "name": "*ST华鹏",
+        "change_pct": 4.983,
+        "turnover": 0.94,
+        "seal_type": "一字板/强封",
+        "reason_raw": "日用玻璃+跨境电商+退市风险警示"
+      }
+    ]
+  },
+  "券商金融": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "000783",
+        "name": "长江证券",
+        "change_pct": 10.0,
+        "turnover": 5.46,
+        "seal_type": "T字板/中等",
+        "reason_raw": "券商+科创投资+高分红填权+一季报增长"
+      }
+    ]
+  },
+  "一季报增长": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.0,
+    "max_change": 5.0,
+    "stocks": [
+      {
+        "code": "603595",
+        "name": "ST东尼",
+        "change_pct": 4.997,
+        "turnover": 0.11,
+        "seal_type": "一字板/强封",
+        "reason_raw": "一季报增长+碳化硅+消费电子"
+      }
+    ]
+  },
+  "业绩预增": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "002648",
+        "name": "卫星化学",
+        "change_pct": 10.004,
+        "turnover": 0.74,
+        "seal_type": "一字板/强封",
+        "reason_raw": "业绩预增+液冷冷却液+新材料"
+      }
+    ]
+  }
+}
