@@ -1081,10 +1081,7 @@ def _build_report(date_str: str, stocks: list[dict], themes: dict,
 report = generate_review_report("2026-06-23")
 print(report)
 
-# 保存为文件
-with open("review_report.md", "w") as f:
-    f.write(report)
-print("\n✅ 报告已保存至 review_report.md")
+# ⚠️ 不要直接保存到此路径！必须使用下方的 save_review_to_project() 落地到项目目录。
 ```
 
 ---
@@ -1119,6 +1116,261 @@ def batch_review(start_date: str, end_date: str):
 
 # 用法: 复盘最近一周
 # batch_review("2026-06-17", "2026-06-23")
+```
+
+---
+
+## ⚠️ 报告落地与 Git 推送（必须执行）
+
+**这是复盘的最后一步，必须完成，不允许跳过。** 之前出现过报告生成后只打印到终端、或保存到项目外路径（如 `/home/ubuntu/reviews/`）导致文件丢失的问题。
+
+### 落地流程
+
+```
+1. 生成复盘报告 → Markdown 字符串
+2. 保存到项目目录: reviews/{YYYY-MM-DD}/report.md
+3. 保存原始数据: reviews/{YYYY-MM-DD}/data/*.json
+4. 生成摘要卡片: reviews/{YYYY-MM-DD}/README.md
+5. 更新索引: reviews/index.md
+6. Git commit + push 到用户 fork (myfork)
+```
+
+### 目录结构（标准）
+
+```
+reviews/
+├── README.md
+├── index.md                    # 复盘索引（每新增一天，追加一行）
+└── YYYY-MM-DD/
+    ├── README.md               # 当日摘要卡片
+    ├── report.md               # 完整复盘报告（Markdown）
+    └── data/
+        ├── stocks.json         # 涨停股原始数据
+        ├── index.json          # 指数行情
+        ├── themes.json         # 题材归类结果
+        └── dragon_tiger.json   # 龙虎榜数据
+```
+
+### 落地函数
+
+```python
+import os, json
+from datetime import date as _date
+from collections import Counter
+
+def save_review_to_project(date_str: str, report: str,
+                           stocks: list[dict], themes: dict,
+                           index_data: dict, dragon_data: list[dict],
+                           project_root: str = None):
+    """
+    将复盘报告和原始数据落地到项目 reviews/ 目录。
+    """
+    if project_root is None:
+        project_root = os.environ.get(
+            "A_STOCK_PROJECT_ROOT",
+            os.getcwd()
+        )
+    
+    review_dir = os.path.join(project_root, "reviews", date_str)
+    data_dir = os.path.join(review_dir, "data")
+    os.makedirs(data_dir, exist_ok=True)
+    
+    # ── 1. 保存完整报告 ──
+    report_path = os.path.join(review_dir, "report.md")
+    with open(report_path, "w", encoding="utf-8") as f:
+        f.write(report)
+    print(f"✅ 报告已保存: {report_path}")
+    
+    # ── 2. 保存原始数据 ──
+    with open(os.path.join(data_dir, "stocks.json"), "w", encoding="utf-8") as f:
+        json.dump(stocks, f, ensure_ascii=False, indent=2)
+    
+    with open(os.path.join(data_dir, "index.json"), "w", encoding="utf-8") as f:
+        json.dump(index_data, f, ensure_ascii=False, indent=2, default=str)
+    
+    themes_serializable = {}
+    for theme, info in themes.items():
+        d = dict(info)
+        d["stocks"] = [{"code": s["code"], "name": s["name"]} for s in info["stocks"]]
+        themes_serializable[theme] = d
+    with open(os.path.join(data_dir, "themes.json"), "w", encoding="utf-8") as f:
+        json.dump(themes_serializable, f, ensure_ascii=False, indent=2)
+    
+    with open(os.path.join(data_dir, "dragon_tiger.json"), "w", encoding="utf-8") as f:
+        json.dump(dragon_data, f, ensure_ascii=False, indent=2)
+    
+    print(f"✅ 原始数据已保存: {data_dir}/")
+    
+    # ── 3. 生成每日摘要卡片 ──
+    _save_daily_readme(date_str, stocks, themes, index_data, review_dir)
+    
+    # ── 4. 更新复盘索引 ──
+    _update_review_index(date_str, stocks, themes, project_root)
+    
+    return review_dir
+
+
+def _save_daily_readme(date_str: str, stocks: list[dict], themes: dict,
+                        index_data: dict, review_dir: str):
+    """生成当日的 README.md 摘要卡片"""
+    
+    limit_up_count = len(stocks)
+    twenty_cm = sum(1 for s in stocks if s.get("change_pct", 0) >= 19.9)
+    st_count = sum(1 for s in stocks if "ST" in s.get("name", ""))
+    seal_dist = Counter(s.get("seal_type", "-") for s in stocks)
+    strong_themes = {k: v for k, v in themes.items() if v["count"] >= 3}
+    
+    if limit_up_count >= 80:
+        sentiment = "🔥🔥 极度亢奋"
+    elif limit_up_count >= 50:
+        sentiment = "🔥 强势"
+    elif limit_up_count >= 30:
+        sentiment = "✅ 温和"
+    elif limit_up_count >= 10:
+        sentiment = "❄️ 偏冷"
+    else:
+        sentiment = "🧊 冰点"
+    
+    lines = []
+    lines.append(f"# 📊 {date_str} 复盘摘要")
+    lines.append("")
+    lines.append("## 市场概况")
+    lines.append("")
+    lines.append("| 指标 | 数值 |")
+    lines.append("|------|------|")
+    lines.append(f"| 涨停数 | {limit_up_count} 只 |")
+    lines.append(f"| 20cm | {twenty_cm} 只 |")
+    lines.append(f"| ST | {st_count} 只 |")
+    lines.append(f"| 市场情绪 | {sentiment} |")
+    for seal, cnt in seal_dist.most_common():
+        lines.append(f"| {seal} | {cnt} 只 |")
+    lines.append("")
+    
+    lines.append("## 指数表现")
+    lines.append("")
+    lines.append("| 指数 | 收盘 | 涨跌幅 |")
+    lines.append("|------|------|--------|")
+    for name, info in index_data.items():
+        lines.append(f"| {name} | {info['price']:.2f} | {info['change_pct']:+.2f}% |")
+    lines.append("")
+    
+    lines.append("## 核心题材")
+    lines.append("")
+    lines.append("| 热度 | 题材 | 涨停数 | 龙头 |")
+    lines.append("|------|------|--------|------|")
+    for theme, info in list(strong_themes.items())[:10]:
+        leader = info["stocks"][0] if info["stocks"] else None
+        leader_str = f"{leader['code']} {leader['name']}" if leader else "-"
+        lines.append(f"| {info['strength']} | {theme} | {info['count']} | {leader_str} |")
+    lines.append("")
+    
+    lines.append("## 关键看点")
+    lines.append("")
+    lines.append("<!-- 复盘时由 Claude 填充关键观察 -->")
+    lines.append("")
+    
+    readme_path = os.path.join(review_dir, "README.md")
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    print(f"✅ 摘要卡片已生成: {readme_path}")
+
+
+def _update_review_index(date_str: str, stocks: list[dict], themes: dict,
+                          project_root: str):
+    """更新 reviews/index.md 复盘索引表"""
+    
+    index_path = os.path.join(project_root, "reviews", "index.md")
+    
+    limit_up_count = len(stocks)
+    twenty_cm = sum(1 for s in stocks if s.get("change_pct", 0) >= 19.9)
+    st_count = sum(1 for s in stocks if "ST" in s.get("name", ""))
+    
+    strong_themes = {k: v for k, v in themes.items() if v["count"] >= 3}
+    weak_themes = {k: v for k, v in themes.items() if v["count"] < 3}
+    strong_count = len(strong_themes)
+    weak_count = len(weak_themes)
+    main_lines = "/".join(list(strong_themes.keys())[:3]) if strong_themes else "-"
+    
+    new_row = (
+        f"| {date_str} | {limit_up_count} | {twenty_cm} | {st_count} | "
+        f"{strong_count} | {weak_count} | {main_lines} | "
+        f"[📄]({date_str}/report.md) |"
+    )
+    
+    if os.path.exists(index_path):
+        with open(index_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        header_marker = "| 报告 |"
+        if header_marker in content:
+            insert_pos = content.index(header_marker) + len(header_marker)
+            newline_pos = content.index("\n", insert_pos)
+            new_content = (
+                content[:newline_pos + 1] +
+                new_row + "\n" +
+                content[newline_pos + 1:]
+            )
+            with open(index_path, "w", encoding="utf-8") as f:
+                f.write(new_content)
+            print(f"✅ 索引已更新: {index_path}")
+            return
+    
+    # 索引文件不存在，创建新文件
+    lines = [
+        "# 📊 复盘索引",
+        "",
+        "| 日期 | 涨停 | 20cm | ST | 强势题材 | 零散题材 | 主线 | 报告 |",
+        "|------|------|------|----|----------|----------|------|------|",
+        new_row,
+    ]
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    print(f"✅ 新索引文件已创建: {index_path}")
+
+
+# ── 完整落地调用示例 ──
+# date_str = "2026-06-24"
+# stocks = fetch_limit_up_stocks(date_str)
+# themes = classify_themes(stocks)
+# index_data = _fetch_index_quotes()
+# dragon_data = _fetch_daily_dragon_tiger(date_str)
+# report = _build_report(date_str, stocks, themes, index_data, {}, dragon_data)
+# save_review_to_project(date_str, report, stocks, themes, index_data, dragon_data)
+```
+
+### Claude 执行清单（必须逐条完成）
+
+复盘完成后，Claude 必须自动执行以下步骤，**不得跳过**：
+
+1. **确认项目路径**：本项目路径为 `/home/ubuntu/a-stock-data`。
+
+2. **调用 save_review_to_project()**：保存报告 + 数据到 `reviews/{date}/` 目录。
+
+3. **手动完善 README.md**：函数生成的摘要卡片中"关键看点"部分是占位符，Claude 需根据复盘内容手动填充关键观察（如主线持续性、炸板情况、明日关注点等）。
+
+4. **Git 提交**：
+   ```bash
+   cd /home/ubuntu/a-stock-data
+   git add reviews/
+   git commit -m "feat: add {date_str} daily review report"
+   ```
+
+5. **推送到用户 fork**：
+   ```bash
+   git push myfork main
+   ```
+   推送前确认 remote `myfork` 存在并指向 `xiaobei0125/a-stock-data`。
+
+6. **验证**：确认 GitHub 上可看到提交，报告链接可访问。
+
+> **❌ 常见错误（必须避免）**：
+> - 报告只打印到终端，未保存文件
+> - 保存到项目外路径（如 `/home/ubuntu/reviews/`）
+> - 保存了 report.md 但漏了数据文件或 index 更新
+> - 提交了但没推送
+> - 推送到 origin (simonlin1212) 而非 myfork (xiaobei0125)
+> 
+> **以上任何一项遗漏都视为复盘未完成。**
 ```
 
 ---
