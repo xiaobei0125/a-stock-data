@@ -1,0 +1,38 @@
+{
+  "上证指数": {
+    "price": 4027.26,
+    "change_pct": -2.26,
+    "change_amt": -93.02,
+    "amount_yi": 16211.9571
+  },
+  "深证成指": {
+    "price": 15782.22,
+    "change_pct": -3.44,
+    "change_amt": -561.86,
+    "amount_yi": 19312.1476
+  },
+  "创业板指": {
+    "price": 4194.21,
+    "change_pct": -4.07,
+    "change_amt": -177.78,
+    "amount_yi": 9324.8291
+  },
+  "科创50": {
+    "price": 2032.28,
+    "change_pct": -1.65,
+    "change_amt": -34.05,
+    "amount_yi": 2017.2751
+  },
+  "沪深300": {
+    "price": 4868.22,
+    "change_pct": -3.03,
+    "change_amt": -151.88,
+    "amount_yi": 10680.8266
+  },
+  "国证2000": {
+    "price": 11088.8,
+    "change_pct": -2.56,
+    "change_amt": -291.53,
+    "amount_yi": 9803.2951
+  }
+}

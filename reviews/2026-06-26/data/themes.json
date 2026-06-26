@@ -1,0 +1,686 @@
+{
+  "半导体": {
+    "strength": "🔥🔥🔥 超级主线",
+    "count": 17,
+    "avg_change": 11.48,
+    "total_amount": 25404230000.0,
+    "max_change": 20.0,
+    "stocks": [
+      {
+        "code": "688409",
+        "name": "富创精密"
+      },
+      {
+        "code": "688596",
+        "name": "正帆科技"
+      },
+      {
+        "code": "688432",
+        "name": "有研硅"
+      },
+      {
+        "code": "301349",
+        "name": "信德新材"
+      },
+      {
+        "code": "002129",
+        "name": "TCL中环"
+      },
+      {
+        "code": "605399",
+        "name": "晨光新材"
+      },
+      {
+        "code": "605366",
+        "name": "宏柏新材"
+      },
+      {
+        "code": "002119",
+        "name": "康强电子"
+      },
+      {
+        "code": "603722",
+        "name": "阿科力"
+      },
+      {
+        "code": "600481",
+        "name": "双良节能"
+      },
+      {
+        "code": "002106",
+        "name": "莱宝高科"
+      },
+      {
+        "code": "603155",
+        "name": "新亚强"
+      },
+      {
+        "code": "002180",
+        "name": "奔图科技"
+      },
+      {
+        "code": "000620",
+        "name": "盈新发展"
+      },
+      {
+        "code": "000056",
+        "name": "*ST皇庭"
+      },
+      {
+        "code": "002816",
+        "name": "*ST和科"
+      },
+      {
+        "code": "600730",
+        "name": "*ST高科"
+      }
+    ]
+  },
+  "国企改革": {
+    "strength": "🔥🔥 强势题材",
+    "count": 5,
+    "avg_change": 6.97,
+    "total_amount": 260730000.0,
+    "max_change": 10.02,
+    "stocks": [
+      {
+        "code": "002253",
+        "name": "川大智胜"
+      },
+      {
+        "code": "600228",
+        "name": "返利科技"
+      },
+      {
+        "code": "000838",
+        "name": "*ST发展"
+      },
+      {
+        "code": "603377",
+        "name": "ST东时"
+      },
+      {
+        "code": "600568",
+        "name": "ST中珠"
+      }
+    ]
+  },
+  "军工": {
+    "strength": "🔥🔥 强势题材",
+    "count": 5,
+    "avg_change": 12.0,
+    "total_amount": 12721640000.0,
+    "max_change": 19.98,
+    "stocks": [
+      {
+        "code": "300540",
+        "name": "蜀道装备"
+      },
+      {
+        "code": "600343",
+        "name": "航天动力"
+      },
+      {
+        "code": "600118",
+        "name": "中国卫星"
+      },
+      {
+        "code": "001270",
+        "name": "铖昌科技"
+      },
+      {
+        "code": "603698",
+        "name": "航天工程"
+      }
+    ]
+  },
+  "消费": {
+    "strength": "💤 零散题材",
+    "count": 2,
+    "avg_change": 10.02,
+    "total_amount": 655580000.0,
+    "max_change": 10.04,
+    "stocks": [
+      {
+        "code": "002910",
+        "name": "庄园牧场"
+      },
+      {
+        "code": "001215",
+        "name": "千味央厨"
+      }
+    ]
+  },
+  "机器人": {
+    "strength": "💤 零散题材",
+    "count": 2,
+    "avg_change": 10.0,
+    "total_amount": 359010000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "003033",
+        "name": "征和工业"
+      },
+      {
+        "code": "603194",
+        "name": "中力股份"
+      }
+    ]
+  },
+  "算力": {
+    "strength": "💤 零散题材",
+    "count": 2,
+    "avg_change": 7.48,
+    "total_amount": 4467430000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "001389",
+        "name": "广合科技"
+      },
+      {
+        "code": "002713",
+        "name": "*ST东易"
+      }
+    ]
+  },
+  "新能源": {
+    "strength": "💤 零散题材",
+    "count": 2,
+    "avg_change": 9.99,
+    "total_amount": 295860000.0,
+    "max_change": 10.02,
+    "stocks": [
+      {
+        "code": "001289",
+        "name": "龙源电力"
+      },
+      {
+        "code": "601369",
+        "name": "陕鼓动力"
+      }
+    ]
+  },
+  "长兴半导体": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.04,
+    "total_amount": 172120000.0,
+    "max_change": 10.04,
+    "stocks": [
+      {
+        "code": "002930",
+        "name": "宏川智慧"
+      }
+    ]
+  },
+  "磷矿采矿权": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 4.96,
+    "total_amount": 105450000.0,
+    "max_change": 4.96,
+    "stocks": [
+      {
+        "code": "002538",
+        "name": "ST司特"
+      }
+    ]
+  },
+  "音视频软件": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 20.02,
+    "total_amount": 466730000.0,
+    "max_change": 20.02,
+    "stocks": [
+      {
+        "code": "300264",
+        "name": "佳创视讯"
+      }
+    ]
+  },
+  "猪肉": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.02,
+    "total_amount": 144850000.0,
+    "max_change": 10.02,
+    "stocks": [
+      {
+        "code": "605296",
+        "name": "神农集团"
+      }
+    ]
+  },
+  "3D打印": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 441240000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "001400",
+        "name": "江顺科技"
+      }
+    ]
+  },
+  "安世半导体控制权诉讼": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 4.98,
+    "total_amount": 1037180000.0,
+    "max_change": 4.98,
+    "stocks": [
+      {
+        "code": "600745",
+        "name": "*ST闻泰"
+      }
+    ]
+  },
+  "拟收购利珀科技": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.98,
+    "total_amount": 251720000.0,
+    "max_change": 9.98,
+    "stocks": [
+      {
+        "code": "600539",
+        "name": "狮头股份"
+      }
+    ]
+  },
+  "玻璃基Micro LED": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 19.98,
+    "total_amount": 1216950000.0,
+    "max_change": 19.98,
+    "stocks": [
+      {
+        "code": "300162",
+        "name": "雷曼光电"
+      }
+    ]
+  },
+  "TGV产品": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.01,
+    "total_amount": 1016790000.0,
+    "max_change": 10.01,
+    "stocks": [
+      {
+        "code": "002962",
+        "name": "五方光电"
+      }
+    ]
+  },
+  "AI": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.96,
+    "total_amount": 4208850000.0,
+    "max_change": 9.96,
+    "stocks": [
+      {
+        "code": "002354",
+        "name": "天娱数科"
+      }
+    ]
+  },
+  "半导体洁净室": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 1387130000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "601133",
+        "name": "柏诚股份"
+      }
+    ]
+  },
+  "芯长征入主": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.03,
+    "total_amount": 198460000.0,
+    "max_change": 10.03,
+    "stocks": [
+      {
+        "code": "603903",
+        "name": "中持股份"
+      }
+    ]
+  },
+  "半导体散热片": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.99,
+    "total_amount": 217450000.0,
+    "max_change": 9.99,
+    "stocks": [
+      {
+        "code": "603270",
+        "name": "金帝股份"
+      }
+    ]
+  },
+  "玻璃盖板": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 19.98,
+    "total_amount": 879540000.0,
+    "max_change": 19.98,
+    "stocks": [
+      {
+        "code": "301051",
+        "name": "信濠光电"
+      }
+    ]
+  },
+  "ST摘帽": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.07,
+    "total_amount": 102580000.0,
+    "max_change": 5.07,
+    "stocks": [
+      {
+        "code": "002822",
+        "name": "ST中装"
+      }
+    ]
+  },
+  "玻璃基板TGV": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 4468510000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "600552",
+        "name": "凯盛科技"
+      }
+    ]
+  },
+  "铸造树脂": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.98,
+    "total_amount": 142030000.0,
+    "max_change": 9.98,
+    "stocks": [
+      {
+        "code": "603928",
+        "name": "兴业股份"
+      }
+    ]
+  },
+  "航空装备": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 98680000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "603261",
+        "name": "立航科技"
+      }
+    ]
+  },
+  "钽铌涨价": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.98,
+    "total_amount": 815650000.0,
+    "max_change": 9.98,
+    "stocks": [
+      {
+        "code": "603977",
+        "name": "国泰集团"
+      }
+    ]
+  },
+  "参股半导体检测公司": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.01,
+    "total_amount": 1337090000.0,
+    "max_change": 10.01,
+    "stocks": [
+      {
+        "code": "002559",
+        "name": "亚威股份"
+      }
+    ]
+  },
+  "玻璃基板上游": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 3941110000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "600367",
+        "name": "红星发展"
+      }
+    ]
+  },
+  "绿色电力": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.06,
+    "total_amount": 1095090000.0,
+    "max_change": 10.06,
+    "stocks": [
+      {
+        "code": "601016",
+        "name": "节能风电"
+      }
+    ]
+  },
+  "光刻胶树脂": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 3051420000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "603650",
+        "name": "彤程新材"
+      }
+    ]
+  },
+  "可转债申请通过": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 486870000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "603163",
+        "name": "圣晖集成"
+      }
+    ]
+  },
+  "地产基建": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.02,
+    "total_amount": 280780000.0,
+    "max_change": 10.02,
+    "stocks": [
+      {
+        "code": "600962",
+        "name": "国投中鲁"
+      }
+    ]
+  },
+  "收购酷尔芯": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.01,
+    "total_amount": 1181190000.0,
+    "max_change": 10.01,
+    "stocks": [
+      {
+        "code": "002965",
+        "name": "祥鑫科技"
+      }
+    ]
+  },
+  "成功竞拍": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.02,
+    "total_amount": 156390000.0,
+    "max_change": 10.02,
+    "stocks": [
+      {
+        "code": "001210",
+        "name": "金房能源"
+      }
+    ]
+  },
+  "PCB上游": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 9.92,
+    "total_amount": 1430370000.0,
+    "max_change": 9.92,
+    "stocks": [
+      {
+        "code": "002141",
+        "name": "贤丰控股"
+      }
+    ]
+  },
+  "GPU投资进展": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 899740000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "603687",
+        "name": "大胜达"
+      }
+    ]
+  },
+  "电子布设备": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.08,
+    "total_amount": 438100000.0,
+    "max_change": 10.08,
+    "stocks": [
+      {
+        "code": "600545",
+        "name": "卓郎智能"
+      }
+    ]
+  },
+  "AIDC直流配电": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.04,
+    "total_amount": 174770000.0,
+    "max_change": 10.04,
+    "stocks": [
+      {
+        "code": "603861",
+        "name": "白云电器"
+      }
+    ]
+  },
+  "债务和解": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.04,
+    "total_amount": 49590000.0,
+    "max_change": 5.04,
+    "stocks": [
+      {
+        "code": "000609",
+        "name": "*ST中迪"
+      }
+    ]
+  },
+  "中报预增": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 196980000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "002568",
+        "name": "百润股份"
+      }
+    ]
+  },
+  "液冷泵": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 47140000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "603956",
+        "name": "威派格"
+      }
+    ]
+  },
+  "一季报增长": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 5.0,
+    "total_amount": 124350000.0,
+    "max_change": 5.0,
+    "stocks": [
+      {
+        "code": "603595",
+        "name": "ST东尼"
+      }
+    ]
+  },
+  "新材料": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.0,
+    "total_amount": 217110000.0,
+    "max_change": 10.0,
+    "stocks": [
+      {
+        "code": "002674",
+        "name": "兴业科技"
+      }
+    ]
+  },
+  "转债摘牌": {
+    "strength": "💤 零散题材",
+    "count": 1,
+    "avg_change": 10.01,
+    "total_amount": 3018020000.0,
+    "max_change": 10.01,
+    "stocks": [
+      {
+        "code": "000823",
+        "name": "超声电子"
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@
   "version": "2.0",
   "created": "2026-06-25",
   "project_root": "/home/ubuntu/a-stock-data",
-  "last_review_date": "2026-06-25",
+  "last_review_date": "2026-06-26",
   "daily_metrics": {
     "2026-06-23": {
       "limit_up_count": 115,
@@ -57,6 +57,34 @@
         "沪深300": 1.56,
         "国证2000": -0.12
       }
+    },
+    "2026-06-26": {
+      "limit_up_count": 72,
+      "twenty_cm": 8,
+      "st_count": 12,
+      "sentiment": "🔥 强势（个股活跃，指数承压）",
+      "top_3_themes": [
+        "半导体",
+        "军工/商业航天",
+        "国企改革/重组"
+      ],
+      "theme_count": 9,
+      "strong_theme_count": 6,
+      "weak_theme_count": 3,
+      "seal_distribution": {
+        "实体板 📈": 67,
+        "一字板 🔒": 3,
+        "T字板 ⚡": 2
+      },
+      "main_index_changes": {
+        "上证指数": -2.26,
+        "深证成指": -3.44,
+        "创业板指": -4.07,
+        "科创50": -1.65,
+        "沪深300": -3.03,
+        "国证2000": -2.56
+      },
+      "zhaban_count": 0
     }
   },
   "leader_tracking": {
@@ -314,7 +342,9 @@
         "role": "龙头",
         "seal_type": "实体板 📈",
         "turnover": 16.04,
-        "board": "创业板"
+        "board": "创业板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
       },
       {
         "code": "002303",
@@ -324,7 +354,9 @@
         "role": "龙头",
         "seal_type": "实体板 📈",
         "turnover": 15.57,
-        "board": "深市主板"
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
       },
       {
         "code": "600516",
@@ -334,7 +366,9 @@
         "role": "龙头",
         "seal_type": "实体板 📈",
         "turnover": 6.6,
-        "board": "沪市主板"
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
       },
       {
         "code": "000818",
@@ -344,7 +378,9 @@
         "role": "龙头",
         "seal_type": "实体板 📈",
         "turnover": 3.13,
-        "board": "深市主板"
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
       },
       {
         "code": "600141",
@@ -354,7 +390,9 @@
         "role": "先锋",
         "seal_type": "实体板 📈",
         "turnover": 10.08,
-        "board": "沪市主板"
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
       },
       {
         "code": "600857",
@@ -364,7 +402,9 @@
         "role": "先锋",
         "seal_type": "实体板 📈",
         "turnover": 5.29,
-        "board": "沪市主板"
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
       },
       {
         "code": "600667",
@@ -374,7 +414,9 @@
         "role": "先锋",
         "seal_type": "一字板 🔒",
         "turnover": 0.73,
-        "board": "沪市主板"
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
       },
       {
         "code": "002484",
@@ -384,32 +426,182 @@
         "role": "先锋",
         "seal_type": "实体板 📈",
         "turnover": 2.6,
-        "board": "深市主板"
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": "未涨停"
+      }
+    ],
+    "2026-06-26": [
+      {
+        "code": "688409",
+        "name": "富创精密",
+        "change_pct": 20.0,
+        "theme": "半导体",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 3.9,
+        "board": "科创板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "300540",
+        "name": "蜀道装备",
+        "change_pct": 19.98,
+        "theme": "军工/商业航天",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 17.7,
+        "board": "创业板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "301051",
+        "name": "信濠光电",
+        "change_pct": 19.98,
+        "theme": "新能源",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 19.8,
+        "board": "创业板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "002910",
+        "name": "庄园牧场",
+        "change_pct": 10.04,
+        "theme": "国企改革/重组",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 19.9,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "603861",
+        "name": "白云电器",
+        "change_pct": 10.04,
+        "theme": "算力/AI",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 2.3,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "001289",
+        "name": "龙源电力",
+        "change_pct": 10.02,
+        "theme": "新能源",
+        "role": "先锋",
+        "seal_type": "实体板 📈",
+        "turnover": 0.1,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "605296",
+        "name": "神农集团",
+        "change_pct": 10.02,
+        "theme": "消费",
+        "role": "龙头",
+        "seal_type": "实体板 📈",
+        "turnover": 1.1,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "002674",
+        "name": "兴业科技",
+        "change_pct": 10.0,
+        "theme": "半导体",
+        "role": "先锋",
+        "seal_type": "一字板 🔒",
+        "turnover": 2.6,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "603261",
+        "name": "立航科技",
+        "change_pct": 10.0,
+        "theme": "军工/商业航天",
+        "role": "先锋",
+        "seal_type": "实体板 📈",
+        "turnover": 2.3,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "603956",
+        "name": "威派格",
+        "change_pct": 10.0,
+        "theme": "算力/AI",
+        "role": "先锋",
+        "seal_type": "一字板 🔒",
+        "turnover": 1.4,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "002568",
+        "name": "百润股份",
+        "change_pct": 10.0,
+        "theme": "消费",
+        "role": "先锋",
+        "seal_type": "实体板 📈",
+        "turnover": 1.6,
+        "board": "深市主板",
+        "next_day_change": null,
+        "next_day_status": null
+      },
+      {
+        "code": "600228",
+        "name": "返利科技",
+        "change_pct": 9.99,
+        "theme": "国企改革/重组",
+        "role": "先锋",
+        "seal_type": "一字板 🔒",
+        "turnover": 0.1,
+        "board": "沪市主板",
+        "next_day_change": null,
+        "next_day_status": null
       }
     ]
   },
   "theme_lifecycle": {
     "半导体": {
       "first_seen": "2026-06-23",
-      "last_seen": "2026-06-25",
-      "peak_count": 38,
-      "peak_date": "2026-06-25",
+      "last_seen": "2026-06-26",
+      "peak_count": 41,
+      "peak_date": "2026-06-26",
       "daily_counts": {
         "2026-06-23": 16,
-        "2026-06-25": 38
+        "2026-06-25": 38,
+        "2026-06-26": 41
       },
-      "status": "加速中"
+      "status": "延续 ➡️"
     },
     "消费": {
       "first_seen": "2026-06-23",
-      "last_seen": "2026-06-25",
+      "last_seen": "2026-06-26",
       "peak_count": 15,
       "peak_date": "2026-06-23",
       "daily_counts": {
         "2026-06-23": 15,
-        "2026-06-25": 3
+        "2026-06-25": 3,
+        "2026-06-26": 3
       },
-      "status": "衰退中"
+      "status": "延续 ➡️"
     },
     "医药": {
       "first_seen": "2026-06-23",
@@ -499,6 +691,46 @@
       "peak_date": "2026-06-25",
       "daily_counts": {
         "2026-06-25": 6
+      },
+      "status": "新生"
+    },
+    "军工/商业航天": {
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
+      "peak_count": 8,
+      "peak_date": "2026-06-26",
+      "daily_counts": {
+        "2026-06-26": 8
+      },
+      "status": "新生"
+    },
+    "国企改革/重组": {
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
+      "peak_count": 6,
+      "peak_date": "2026-06-26",
+      "daily_counts": {
+        "2026-06-26": 6
+      },
+      "status": "新生"
+    },
+    "算力/AI": {
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
+      "peak_count": 6,
+      "peak_date": "2026-06-26",
+      "daily_counts": {
+        "2026-06-26": 6
+      },
+      "status": "新生"
+    },
+    "新能源": {
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
+      "peak_count": 4,
+      "peak_date": "2026-06-26",
+      "daily_counts": {
+        "2026-06-26": 4
       },
       "status": "新生"
     }
